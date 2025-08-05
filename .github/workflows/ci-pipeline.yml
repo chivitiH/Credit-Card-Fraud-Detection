@@ -27,9 +27,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # === CORRECTION ICI ===
-          # On installe toutes les dépendances nécessaires pour la phase de test.
-          pip install pytest optuna
+          # === CORRECTION FINALE ICI ===
+          # On installe pytest, optuna ET le paquet des intégrations d'optuna.
+          pip install pytest optuna optuna-integration
 
       - name: Lancer la suite de tests
         run: |
