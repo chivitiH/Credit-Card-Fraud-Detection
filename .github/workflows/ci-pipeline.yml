@@ -2,7 +2,6 @@
 
 name: CI Pipeline - Test du Code Source
 
-# Déclenche le workflow à chaque push sur la branche main ou sur une pull request vers main
 on:
   push:
     branches: [ main, master ]
@@ -11,29 +10,27 @@ on:
 
 jobs:
   build-and-test:
-    # Le type de machine sur lequel le job va tourner
     runs-on: ubuntu-latest
-
     steps:
-    # Étape 1: Récupère le code de ton dépôt
-    - name: Checkout du code
-      uses: actions/checkout@v3
+      - name: Checkout du code
+        uses: actions/checkout@v3
+        with:
+          lfs: true
 
-    # Étape 2: Configure l'environnement Python
-    - name: Mettre en place Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-        cache: 'pip' # Met en cache les dépendances pour accélérer les builds futurs
+      - name: Mettre en place Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
 
-    # Étape 3: Installe les dépendances du projet
-    - name: Installer les dépendances
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # === CORRECTION ICI ===
+          # On installe pytest séparément car c'est une dépendance de test, pas de production.
+          pip install pytest
 
-    # Étape 4: Lancer les tests avec pytest
-    # Le coeur de notre CI : on vérifie que tout fonctionne comme prévu.
-    - name: Lancer la suite de tests
-      run: |
-        pytest
+      - name: Lancer la suite de tests
+        run: |
+          pytest
