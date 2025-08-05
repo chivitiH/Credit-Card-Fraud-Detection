@@ -54,7 +54,6 @@ docker-compose up --build
 **Services Docker :**
 - 🔗 API FastAPI : http://localhost:8000
 - 🎨 Streamlit Demo : http://localhost:8501
-- 📊 Grafana Dashboard : http://localhost:3000
 
 ## 🏗️ Architecture
 
@@ -172,30 +171,6 @@ pytest tests/test_api.py -v
 pytest tests/test_model.py -v
 ```
 
-## 📈 Monitoring
-
-Le projet inclut un stack de monitoring complet :
-- **Prometheus** : Collecte des métriques
-- **Grafana** : Dashboards visuels
-- **Logs structurés** : Debugging facilité
-
-## 🚀 Déploiement
-
-### Local Development
-```bash
-python deploy.py
-```
-
-### Production (Docker)
-```bash
-docker-compose -f docker-compose.prod.yml up -d
-```
-
-### Cloud (exemple AWS)
-```bash
-# Déploiement ECS/EKS
-kubectl apply -f k8s/
-```
 
 ## 📚 API Documentation
 
@@ -207,15 +182,3 @@ L'API FastAPI expose plusieurs endpoints :
 - `GET /health` : Health check
 
 Documentation interactive : http://localhost:8000/docs
-
-## 🤝 Contribution
-
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add AmazingFeature'`)
-4. Push la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
-
-## 📄 License
-
-Ce projet est sous licence MIT.

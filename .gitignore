@@ -25,9 +25,5 @@ build/
 # On suppose que quiconque utilise le projet doit télécharger le CSV lui-même
 data/raw/*.csv
 
-# Modèles entraînés (souvent trop gros pour Git)
-# Il est préférable de les stocker ailleurs (ex: DVC, S3) mais pour commencer, on peut les ignorer.
-models/*.pkl
-
 # Fichiers générés par les tests
 .pytest_cache/
