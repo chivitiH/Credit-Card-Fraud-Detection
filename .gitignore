@@ -1,0 +1,33 @@
+# .gitignore
+
+# Environnements virtuels
+venv/
+.venv/
+env/
+.env
+
+# Fichiers de cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers IDE
+.vscode/
+.idea/
+
+# Fichiers de dépendances (si générés localement)
+dist/
+build/
+*.egg-info/
+
+# Fichiers de données brutes volumineux (à ne jamais versionner !)
+# On suppose que quiconque utilise le projet doit télécharger le CSV lui-même
+data/raw/*.csv
+
+# Modèles entraînés (souvent trop gros pour Git)
+# Il est préférable de les stocker ailleurs (ex: DVC, S3) mais pour commencer, on peut les ignorer.
+models/*.pkl
+
+# Fichiers générés par les tests
+.pytest_cache/
