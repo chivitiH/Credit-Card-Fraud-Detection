@@ -218,17 +218,4 @@ Documentation interactive : http://localhost:8000/docs
 
 ## 📄 License
 
-Ce projet est sous licence MIT. Voir `LICENSE` pour plus de détails.
-
-## 👤 Auteur
-
-**Votre Nom**
-- GitHub: [@votre-username](https://github.com/votre-username)
-- LinkedIn: [Votre Profil](https://linkedin.com/in/votre-profil)
-- Email: votre.email@domain.com
-
-## 🙏 Remerciements
-
-- Dataset Kaggle Credit Card Fraud Detection
-- Communauté LightGBM
-- Documentation FastAPI et Streamlit
+Ce projet est sous licence MIT.
